@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="jar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/桌面文件夹 /Java学习记录/jar" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$USER_HOME$/桌面文件夹 /Java学习记录/jar/commons-fileupload-1.2.2/site/apidocs" />
+      <root url="file://$USER_HOME$/桌面文件夹 /Java学习记录/jar/commons-fileupload-1.2.2/site/testapidocs" />
+    </JAVADOC>
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/桌面文件夹 /Java学习记录/jar" recursive="false" />
+  </library>
+</component>
