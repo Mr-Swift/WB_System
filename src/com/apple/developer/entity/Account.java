@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 @SuppressWarnings("all")
 public class Account implements Serializable {
-    private int acc_id;
-    private String acc_no;
-    private String emp_no;
-    private String acc_type;
+    private int accId;
+    private String accNo;
+    private String empNo;
+    private String accType;
     private double money;
-    private String acc_status;
-    private String acc_create_time;
+    private String accStatus;
+    private String accCreateTime;
 
     private Employee employee;
 
@@ -18,28 +18,28 @@ public class Account implements Serializable {
      * 构造方法
      * <p>
      * 存入时，将得到的申请人的名字查找到对应的员工编号存进去
-     * 存入时只需要emp_no、acc_type、money、acc_status，acc_id自增长、acc_create_time用now()函数自动生成
+     * 存入时只需要empNo、accType、money、accStatus，accId自增长、accCreateTime用now()函数自动生成
      * <p>
      * 取出时，将数据库里的员工编号多表联查，查到员工编号、员工姓名取出来
-     * 取出时需要acc_no、acc_type、money、acc_status、acc_create_time，employee
+     * 取出时需要accNo、accType、money、accStatus、accCreateTime，employee
      */
     public Account() {
     }
 
-    public Account(String acc_no, String emp_no, String acc_type, double money, String acc_status) {
-        this.acc_no = acc_no;
-        this.emp_no = emp_no;
-        this.acc_type = acc_type;
+    public Account(String accNo, String empNo, String accType, double money, String accStatus) {
+        this.accNo = accNo;
+        this.empNo = empNo;
+        this.accType = accType;
         this.money = money;
-        this.acc_status = acc_status;
+        this.accStatus = accStatus;
     }
 
-    public Account(String acc_no, String acc_type, double money, String acc_status, String acc_create_time, Employee employee) {
-        this.acc_no = acc_no;
-        this.acc_type = acc_type;
+    public Account(String accNo, String accType, double money, String accStatus, String accCreateTime, Employee employee) {
+        this.accNo = accNo;
+        this.accType = accType;
         this.money = money;
-        this.acc_status = acc_status;
-        this.acc_create_time = acc_create_time;
+        this.accStatus = accStatus;
+        this.accCreateTime = accCreateTime;
         this.employee = employee;
     }
 
@@ -48,36 +48,36 @@ public class Account implements Serializable {
      *
      * @return
      */
-    public int getAcc_id() {
-        return acc_id;
+    public int getaccId() {
+        return accId;
     }
 
-    public void setAcc_id(int acc_id) {
-        this.acc_id = acc_id;
+    public void setaccId(int accId) {
+        this.accId = accId;
     }
 
-    public String getAcc_no() {
-        return acc_no;
+    public String getaccNo() {
+        return accNo;
     }
 
-    public void setAcc_no(String acc_no) {
-        this.acc_no = acc_no;
+    public void setaccNo(String accNo) {
+        this.accNo = accNo;
     }
 
-    public String getEmp_no() {
-        return emp_no;
+    public String getempNo() {
+        return empNo;
     }
 
-    public void setEmp_no(String emp_no) {
-        this.emp_no = emp_no;
+    public void setempNo(String empNo) {
+        this.empNo = empNo;
     }
 
-    public String getAcc_type() {
-        return acc_type;
+    public String getaccType() {
+        return accType;
     }
 
-    public void setAcc_type(String acc_type) {
-        this.acc_type = acc_type;
+    public void setaccType(String accType) {
+        this.accType = accType;
     }
 
     public double getMoney() {
@@ -88,20 +88,20 @@ public class Account implements Serializable {
         this.money = money;
     }
 
-    public String getAcc_status() {
-        return acc_status;
+    public String getaccStatus() {
+        return accStatus;
     }
 
-    public void setAcc_status(String acc_status) {
-        this.acc_status = acc_status;
+    public void setaccStatus(String accStatus) {
+        this.accStatus = accStatus;
     }
 
-    public String getAcc_create_time() {
-        return acc_create_time;
+    public String getaccCreateTime() {
+        return accCreateTime;
     }
 
-    public void setAcc_create_time(String acc_create_time) {
-        this.acc_create_time = acc_create_time;
+    public void setaccCreateTime(String accCreateTime) {
+        this.accCreateTime = accCreateTime;
     }
 
     public Employee getEmployee() {
@@ -118,13 +118,13 @@ public class Account implements Serializable {
     @Override
     public String toString() {
         return "Account{" +
-                "acc_id=" + acc_id +
-                ", acc_no='" + acc_no + '\'' +
-                ", emp_no='" + emp_no + '\'' +
-                ", acc_type='" + acc_type + '\'' +
+                "accId=" + accId +
+                ", accNo='" + accNo + '\'' +
+                ", empNo='" + empNo + '\'' +
+                ", accType='" + accType + '\'' +
                 ", money=" + money +
-                ", acc_status='" + acc_status + '\'' +
-                ", acc_create_time='" + acc_create_time + '\'' +
+                ", accStatus='" + accStatus + '\'' +
+                ", accCreateTime='" + accCreateTime + '\'' +
                 ", employee=" + employee +
                 '}';
     }

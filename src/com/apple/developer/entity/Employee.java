@@ -4,18 +4,18 @@ import java.io.Serializable;
 
 @SuppressWarnings("all")
 public class Employee implements Serializable {
-    private int emp_id;
-    private String emp_no;
-    private String emp_name;
-    private String dep_no;
+    private int empId;
+    private String empNo;
+    private String empName;
+    private String depNo;
     private String sex;
     private int age;
     private String education;
     private String email;
     private String telphone;
     private String address;
-    private String entry_time;
-    private String emp_create_time;
+    private String entryTime;
+    private String empCreateTime;
 
     private Department department;
 
@@ -23,44 +23,44 @@ public class Employee implements Serializable {
      * 构造方法
      * <p>
      * 存入时，将得到的部门名查找到对应的部门编号存进去
-     * 存入时只需要emp_no、emp_name、dep_no、sex、age、education、email、telphone、address、entry_time，emp_id自增长、emp_create_time用now()函数自动生成
+     * 存入时只需要empNo、empName、depNo、sex、age、education、email、telphone、address、entryTime，empId自增长、empCreateTime用now()函数自动生成
      * <p>
      * 取出时，将数据库里的部门编号多表联查，得到部门编号和部门名
-     * 取出时需要emp_no、emp_name、sex、age、education、email、telphone、address、entry_time、emp_create_time，department
+     * 取出时需要empNo、empName、sex、age、education、email、telphone、address、entryTime、empCreateTime，department
      */
 
     public Employee() {
     }
 
-    public Employee(String emp_no, String emp_name) {
-        this.emp_no = emp_no;
-        this.emp_name = emp_name;
+    public Employee(String empNo, String empName) {
+        this.empNo = empNo;
+        this.empName = empName;
     }
 
-    public Employee(String emp_no, String emp_name, String dep_no, String sex, int age, String education, String email, String telphone, String address, String entry_time) {
-        this.emp_no = emp_no;
-        this.emp_name = emp_name;
-        this.dep_no = dep_no;
+    public Employee(String empNo, String empName, String depNo, String sex, int age, String education, String email, String telphone, String address, String entryTime) {
+        this.empNo = empNo;
+        this.empName = empName;
+        this.depNo = depNo;
         this.sex = sex;
         this.age = age;
         this.education = education;
         this.email = email;
         this.telphone = telphone;
         this.address = address;
-        this.entry_time = entry_time;
+        this.entryTime = entryTime;
     }
 
-    public Employee(String emp_no, String emp_name, String sex, int age, String education, String email, String telphone, String address, String entry_time, String emp_create_time, Department department) {
-        this.emp_no = emp_no;
-        this.emp_name = emp_name;
+    public Employee(String empNo, String empName, String sex, int age, String education, String email, String telphone, String address, String entryTime, String empCreateTime, Department department) {
+        this.empNo = empNo;
+        this.empName = empName;
         this.sex = sex;
         this.age = age;
         this.education = education;
         this.email = email;
         this.telphone = telphone;
         this.address = address;
-        this.entry_time = entry_time;
-        this.emp_create_time = emp_create_time;
+        this.entryTime = entryTime;
+        this.empCreateTime = empCreateTime;
         this.department = department;
     }
 
@@ -69,36 +69,36 @@ public class Employee implements Serializable {
      *
      * @return
      */
-    public int getEmp_id() {
-        return emp_id;
+    public int getempId() {
+        return empId;
     }
 
-    public void setEmp_id(int emp_id) {
-        this.emp_id = emp_id;
+    public void setempId(int empId) {
+        this.empId = empId;
     }
 
-    public String getEmp_no() {
-        return emp_no;
+    public String getempNo() {
+        return empNo;
     }
 
-    public void setEmp_no(String emp_no) {
-        this.emp_no = emp_no;
+    public void setempNo(String empNo) {
+        this.empNo = empNo;
     }
 
-    public String getEmp_name() {
-        return emp_name;
+    public String getempName() {
+        return empName;
     }
 
-    public void setEmp_name(String emp_name) {
-        this.emp_name = emp_name;
+    public void setempName(String empName) {
+        this.empName = empName;
     }
 
-    public String getDep_no() {
-        return dep_no;
+    public String getdepNo() {
+        return depNo;
     }
 
-    public void setDep_no(String dep_no) {
-        this.dep_no = dep_no;
+    public void setdepNo(String depNo) {
+        this.depNo = depNo;
     }
 
     public String getSex() {
@@ -149,20 +149,20 @@ public class Employee implements Serializable {
         this.address = address;
     }
 
-    public String getEntry_time() {
-        return entry_time;
+    public String getentryTime() {
+        return entryTime;
     }
 
-    public void setEntry_time(String entry_time) {
-        this.entry_time = entry_time;
+    public void setentryTime(String entryTime) {
+        this.entryTime = entryTime;
     }
 
-    public String getEmp_create_time() {
-        return emp_create_time;
+    public String getempCreateTime() {
+        return empCreateTime;
     }
 
-    public void setEmp_create_time(String emp_create_time) {
-        this.emp_create_time = emp_create_time;
+    public void setempCreateTime(String empCreateTime) {
+        this.empCreateTime = empCreateTime;
     }
 
     public Department getDepartment() {
@@ -179,18 +179,18 @@ public class Employee implements Serializable {
     @Override
     public String toString() {
         return "Employee{" +
-                "emp_id=" + emp_id +
-                ", emp_no='" + emp_no + '\'' +
-                ", emp_name='" + emp_name + '\'' +
-                ", dep_no='" + dep_no + '\'' +
+                "empId=" + empId +
+                ", empNo='" + empNo + '\'' +
+                ", empName='" + empName + '\'' +
+                ", depNo='" + depNo + '\'' +
                 ", sex='" + sex + '\'' +
                 ", age=" + age +
                 ", education='" + education + '\'' +
                 ", email='" + email + '\'' +
                 ", telphone='" + telphone + '\'' +
                 ", address='" + address + '\'' +
-                ", entry_time='" + entry_time + '\'' +
-                ", emp_create_time='" + emp_create_time + '\'' +
+                ", entryTime='" + entryTime + '\'' +
+                ", empCreateTime='" + empCreateTime + '\'' +
                 ", department=" + department +
                 '}';
     }

@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 @SuppressWarnings("all")
 public class Menu implements Serializable {
-    private int menu_id;
-    private String menu_name;
-    private String href_url;
-    private int parent_id;
-    private String menu_create_time;
+    private int menuId;
+    private String menuName;
+    private String hrefUrl;
+    private int parentId;
+    private String menuCreateTime;
 
     private Menu parent;
 
@@ -16,39 +16,39 @@ public class Menu implements Serializable {
      * 构造方法
      * <p>
      * 存入写死，客户端不可以自行增加菜单（功能）
-     * 取出时只需取出menu_name、href_url
+     * 取出时只需取出menuName、hrefUrl
      */
 
     public Menu() {
     }
 
-    public Menu(int menu_id, String menu_name) {
-        this.menu_id = menu_id;
-        this.menu_name = menu_name;
+    public Menu(int menuId, String menuName) {
+        this.menuId = menuId;
+        this.menuName = menuName;
     }
 
-    public Menu(String menu_name, String href_url) {
-        this.menu_name = menu_name;
-        this.href_url = href_url;
+    public Menu(String menuName, String hrefUrl) {
+        this.menuName = menuName;
+        this.hrefUrl = hrefUrl;
     }
 
 
-    //    public Menu(int menu_id, String menu_name) {
-//        this.menu_id = menu_id;
-//        this.menu_name = menu_name;
+    //    public Menu(int menuId, String menuName) {
+//        this.menuId = menuId;
+//        this.menuName = menuName;
 //    }
 //
-//    public Menu(String menu_name, String href_url, int parent_id) {
-//        this.menu_name = menu_name;
-//        this.href_url = href_url;
-//        this.parent_id = parent_id;
+//    public Menu(String menuName, String hrefUrl, int parentId) {
+//        this.menuName = menuName;
+//        this.hrefUrl = hrefUrl;
+//        this.parentId = parentId;
 //    }
 //
-//    public Menu(int menu_id, String menu_name, String href_url, String menu_create_time, Menu parent) {
-//        this.menu_id = menu_id;
-//        this.menu_name = menu_name;
-//        this.href_url = href_url;
-//        this.menu_create_time = menu_create_time;
+//    public Menu(int menuId, String menuName, String hrefUrl, String menuCreateTime, Menu parent) {
+//        this.menuId = menuId;
+//        this.menuName = menuName;
+//        this.hrefUrl = hrefUrl;
+//        this.menuCreateTime = menuCreateTime;
 //        this.parent = parent;
 //    }
 
@@ -58,44 +58,44 @@ public class Menu implements Serializable {
      *
      * @return
      */
-    public int getMenu_id() {
-        return menu_id;
+    public int getmenuId() {
+        return menuId;
     }
 
-    public void setMenu_id(int menu_id) {
-        this.menu_id = menu_id;
+    public void setmenuId(int menuId) {
+        this.menuId = menuId;
     }
 
-    public String getMenu_name() {
-        return menu_name;
+    public String getmenuName() {
+        return menuName;
     }
 
-    public void setMenu_name(String menu_name) {
-        this.menu_name = menu_name;
+    public void setmenuName(String menuName) {
+        this.menuName = menuName;
     }
 
-    public String getHref_url() {
-        return href_url;
+    public String gethrefUrl() {
+        return hrefUrl;
     }
 
-    public void setHref_url(String href_url) {
-        this.href_url = href_url;
+    public void sethrefUrl(String hrefUrl) {
+        this.hrefUrl = hrefUrl;
     }
 
-    public int getParent_id() {
-        return parent_id;
+    public int getparentId() {
+        return parentId;
     }
 
-    public void setParent_id(int parent_id) {
-        this.parent_id = parent_id;
+    public void setparentId(int parentId) {
+        this.parentId = parentId;
     }
 
-    public String getMenu_create_time() {
-        return menu_create_time;
+    public String getmenuCreateTime() {
+        return menuCreateTime;
     }
 
-    public void setMenu_create_time(String menu_create_time) {
-        this.menu_create_time = menu_create_time;
+    public void setmenuCreateTime(String menuCreateTime) {
+        this.menuCreateTime = menuCreateTime;
     }
 
     public Menu getMenu() {
@@ -112,11 +112,11 @@ public class Menu implements Serializable {
     @Override
     public String toString() {
         return "Menu{" +
-                "menu_id=" + menu_id +
-                ", menu_name='" + menu_name + '\'' +
-                ", href_url='" + href_url + '\'' +
-                ", parent_id=" + parent_id +
-                ", menu_create_time='" + menu_create_time + '\'' +
+                "menuId=" + menuId +
+                ", menuName='" + menuName + '\'' +
+                ", hrefUrl='" + hrefUrl + '\'' +
+                ", parentId=" + parentId +
+                ", menuCreateTime='" + menuCreateTime + '\'' +
                 ", parent=" + parent +
                 '}';
     }

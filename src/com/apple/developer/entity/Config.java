@@ -8,34 +8,34 @@ import java.io.Serializable;
 
 @SuppressWarnings("all")
 public class Config implements Serializable {
-    private int con_id;
-    private String con_type;
-    private String con_key;
-    private String con_page;
-    private String con_create_time;
+    private int conId;
+    private String conType;
+    private String conKey;
+    private String conPage;
+    private String conCreateTime;
 
     /**
      * 构造方法
      * <p>
-     * 存入时只需要con_type、con_key、con_page
+     * 存入时只需要conType、conKey、conPage
      * <p>
-     * 取出时需要con_id、con_type、con_key、con_page、con_create_time
+     * 取出时需要conId、conType、conKey、conPage、conCreateTime
      */
 
     public Config() {
     }
 
-    public Config(String con_type, String con_key, String con_page) {
-        this.con_type = con_type;
-        this.con_key = con_key;
-        this.con_page = con_page;
+    public Config(String conType, String conKey, String conPage) {
+        this.conType = conType;
+        this.conKey = conKey;
+        this.conPage = conPage;
     }
 
-    public Config(String con_type, String con_key, String con_page, String con_create_time) {
-        this.con_type = con_type;
-        this.con_key = con_key;
-        this.con_page = con_page;
-        this.con_create_time = con_create_time;
+    public Config(String conType, String conKey, String conPage, String conCreateTime) {
+        this.conType = conType;
+        this.conKey = conKey;
+        this.conPage = conPage;
+        this.conCreateTime = conCreateTime;
     }
 
     /**
@@ -44,44 +44,44 @@ public class Config implements Serializable {
      * @return
      */
 
-    public int getcon_id() {
-        return con_id;
+    public int getconId() {
+        return conId;
     }
 
-    public void setcon_id(int con_id) {
-        this.con_id = con_id;
+    public void setconId(int conId) {
+        this.conId = conId;
     }
 
-    public String getcon_type() {
-        return con_type;
+    public String getconType() {
+        return conType;
     }
 
-    public void setcon_type(String con_type) {
-        this.con_type = con_type;
+    public void setconType(String conType) {
+        this.conType = conType;
     }
 
-    public String getcon_key() {
-        return con_key;
+    public String getconKey() {
+        return conKey;
     }
 
-    public void setcon_key(String con_key) {
-        this.con_key = con_key;
+    public void setconKey(String conKey) {
+        this.conKey = conKey;
     }
 
-    public String getcon_page() {
-        return con_page;
+    public String getconPage() {
+        return conPage;
     }
 
-    public void setcon_page(String con_page) {
-        this.con_page = con_page;
+    public void setconPage(String conPage) {
+        this.conPage = conPage;
     }
 
-    public String getcon_create_time() {
-        return con_create_time;
+    public String getconCreateTime() {
+        return conCreateTime;
     }
 
-    public void setcon_create_time(String con_create_time) {
-        this.con_create_time = con_create_time;
+    public void setconCreateTime(String conCreateTime) {
+        this.conCreateTime = conCreateTime;
     }
 
     /**
@@ -91,11 +91,11 @@ public class Config implements Serializable {
     @Override
     public String toString() {
         return "Config{" +
-                "con_id=" + con_id +
-                ", con_type='" + con_type + '\'' +
-                ", con_key='" + con_key + '\'' +
-                ", con_page='" + con_page + '\'' +
-                ", con_create_time='" + con_create_time + '\'' +
+                "conId=" + conId +
+                ", conType='" + conType + '\'' +
+                ", conKey='" + conKey + '\'' +
+                ", conPage='" + conPage + '\'' +
+                ", conCreateTime='" + conCreateTime + '\'' +
                 '}';
     }
 }

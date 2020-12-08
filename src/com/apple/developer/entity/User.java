@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 @SuppressWarnings("all")
 public class User implements Serializable {
-    private int user_id;
-    private String login_account;
-    private String login_password;
-    private String emp_no;
-    private int role_id;
-    private String user_status;
-    private String user_create_time;
+    private int userId;
+    private String loginAccount;
+    private String loginPassword;
+    private String empNo;
+    private int roleId;
+    private String userStatus;
+    private String userCreateTime;
 
     private Employee employee;
     private Role role;
@@ -19,28 +19,28 @@ public class User implements Serializable {
      * 构造方法
      * <p>
      * 存入时，将得到的员工姓名、角色名查找到对应的员工编号、角色ID存进去
-     * 存入时只需要login_account、login_password、emp_no、role_id、user_status，user_id自增长、user_create_time用now()函数自动生成
+     * 存入时只需要loginAccount、loginPassword、empNo、roleId、userStatus，userId自增长、userCreateTime用now()函数自动生成
      * <p>
      * 取出时，将数据库里的员工编号、角色ID多表联查，查到员工姓名、角色名取出来
-     * 取出时需要login_account、login_password、user_status、user_create_time，employee、role
+     * 取出时需要loginAccount、loginPassword、userStatus、userCreateTime，employee、role
      */
 
     public User() {
     }
 
-    public User(String login_account, String login_password, String emp_no, int role_id, String user_status) {
-        this.login_account = login_account;
-        this.login_password = login_password;
-        this.emp_no = emp_no;
-        this.role_id = role_id;
-        this.user_status = user_status;
+    public User(String loginAccount, String loginPassword, String empNo, int roleId, String userStatus) {
+        this.loginAccount = loginAccount;
+        this.loginPassword = loginPassword;
+        this.empNo = empNo;
+        this.roleId = roleId;
+        this.userStatus = userStatus;
     }
 
-    public User(String login_account, String login_password, String user_status, String user_create_time, Employee employee, Role role) {
-        this.login_account = login_account;
-        this.login_password = login_password;
-        this.user_status = user_status;
-        this.user_create_time = user_create_time;
+    public User(String loginAccount, String loginPassword, String userStatus, String userCreateTime, Employee employee, Role role) {
+        this.loginAccount = loginAccount;
+        this.loginPassword = loginPassword;
+        this.userStatus = userStatus;
+        this.userCreateTime = userCreateTime;
         this.employee = employee;
         this.role = role;
     }
@@ -50,60 +50,60 @@ public class User implements Serializable {
      *
      * @return
      */
-    public int getUser_id() {
-        return user_id;
+    public int getuserId() {
+        return userId;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setuserId(int userId) {
+        this.userId = userId;
     }
 
-    public String getLogin_account() {
-        return login_account;
+    public String getloginAccount() {
+        return loginAccount;
     }
 
-    public void setLogin_account(String login_account) {
-        this.login_account = login_account;
+    public void setloginAccount(String loginAccount) {
+        this.loginAccount = loginAccount;
     }
 
-    public String getLogin_password() {
-        return login_password;
+    public String getloginPassword() {
+        return loginPassword;
     }
 
-    public void setLogin_password(String login_password) {
-        this.login_password = login_password;
+    public void setloginPassword(String loginPassword) {
+        this.loginPassword = loginPassword;
     }
 
-    public String getEmp_no() {
-        return emp_no;
+    public String getempNo() {
+        return empNo;
     }
 
-    public void setEmp_no(String emp_no) {
-        this.emp_no = emp_no;
+    public void setempNo(String empNo) {
+        this.empNo = empNo;
     }
 
-    public int getRole_id() {
-        return role_id;
+    public int getroleId() {
+        return roleId;
     }
 
-    public void setRole_id(int role_id) {
-        this.role_id = role_id;
+    public void setroleId(int roleId) {
+        this.roleId = roleId;
     }
 
-    public String getUser_status() {
-        return user_status;
+    public String getuserStatus() {
+        return userStatus;
     }
 
-    public void setUser_status(String user_status) {
-        this.user_status = user_status;
+    public void setuserStatus(String userStatus) {
+        this.userStatus = userStatus;
     }
 
-    public String getUser_create_time() {
-        return user_create_time;
+    public String getuserCreateTime() {
+        return userCreateTime;
     }
 
-    public void setUser_create_time(String user_create_time) {
-        this.user_create_time = user_create_time;
+    public void setuserCreateTime(String userCreateTime) {
+        this.userCreateTime = userCreateTime;
     }
 
     public Employee getEmployee() {
@@ -128,13 +128,13 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-                "user_id=" + user_id +
-                ", login_account='" + login_account + '\'' +
-                ", login_password='" + login_password + '\'' +
-                ", emp_no='" + emp_no + '\'' +
-                ", role_id=" + role_id +
-                ", user_status='" + user_status + '\'' +
-                ", user_create_time='" + user_create_time + '\'' +
+                "userId=" + userId +
+                ", loginAccount='" + loginAccount + '\'' +
+                ", loginPassword='" + loginPassword + '\'' +
+                ", empNo='" + empNo + '\'' +
+                ", roleId=" + roleId +
+                ", userStatus='" + userStatus + '\'' +
+                ", userCreateTime='" + userCreateTime + '\'' +
                 ", employee=" + employee +
                 ", role=" + role +
                 '}';

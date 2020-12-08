@@ -4,42 +4,42 @@ import java.io.Serializable;
 
 @SuppressWarnings("all")
 public class Department implements Serializable {
-    private int dep_id;
-    private String dep_no;
-    private String dep_name;
+    private int depId;
+    private String depNo;
+    private String depName;
     private String location;
     private String leader;
-    private String dep_create_time;
+    private String depCreateTime;
 
     /**
      * 构造方法
      * <p>
-     * 存入时只需要dep_no、dep_name、location、leader，dep_id自增长、dep_create_time now()函数自动获取
+     * 存入时只需要depNo、depName、location、leader，depId自增长、depCreateTime now()函数自动获取
      * <p>
-     * 取出时需要dep_id、dep_no、dep_name、location、leader、dep_create_time
+     * 取出时需要depId、depNo、depName、location、leader、depCreateTime
      */
 
     public Department() {
     }
 
-    public Department(String dep_no, String dep_name) {
-        this.dep_no = dep_no;
-        this.dep_name = dep_name;
+    public Department(String depNo, String depName) {
+        this.depNo = depNo;
+        this.depName = depName;
     }
 
-    public Department(String dep_no, String dep_name, String location, String leader) {
-        this.dep_no = dep_no;
-        this.dep_name = dep_name;
+    public Department(String depNo, String depName, String location, String leader) {
+        this.depNo = depNo;
+        this.depName = depName;
         this.location = location;
         this.leader = leader;
     }
 
-    public Department(String dep_no, String dep_name, String location, String leader, String dep_create_time) {
-        this.dep_no = dep_no;
-        this.dep_name = dep_name;
+    public Department(String depNo, String depName, String location, String leader, String depCreateTime) {
+        this.depNo = depNo;
+        this.depName = depName;
         this.location = location;
         this.leader = leader;
-        this.dep_create_time = dep_create_time;
+        this.depCreateTime = depCreateTime;
     }
 
 
@@ -48,28 +48,28 @@ public class Department implements Serializable {
      *
      * @return
      */
-    public int getDep_id() {
-        return dep_id;
+    public int getdepId() {
+        return depId;
     }
 
-    public void setDep_id(int dep_id) {
-        this.dep_id = dep_id;
+    public void setdepId(int depId) {
+        this.depId = depId;
     }
 
-    public String getDep_no() {
-        return dep_no;
+    public String getdepNo() {
+        return depNo;
     }
 
-    public void setDep_no(String dep_no) {
-        this.dep_no = dep_no;
+    public void setdepNo(String depNo) {
+        this.depNo = depNo;
     }
 
-    public String getDep_name() {
-        return dep_name;
+    public String getdepName() {
+        return depName;
     }
 
-    public void setDep_name(String dep_name) {
-        this.dep_name = dep_name;
+    public void setdepName(String depName) {
+        this.depName = depName;
     }
 
     public String getLocation() {
@@ -88,12 +88,12 @@ public class Department implements Serializable {
         this.leader = leader;
     }
 
-    public String getDep_create_time() {
-        return dep_create_time;
+    public String getdepCreateTime() {
+        return depCreateTime;
     }
 
-    public void setDep_create_time(String dep_create_time) {
-        this.dep_create_time = dep_create_time;
+    public void setdepCreateTime(String depCreateTime) {
+        this.depCreateTime = depCreateTime;
     }
 
 
@@ -103,12 +103,12 @@ public class Department implements Serializable {
     @Override
     public String toString() {
         return "Department{" +
-                "dep_id=" + dep_id +
-                ", dep_no='" + dep_no + '\'' +
-                ", dep_name='" + dep_name + '\'' +
+                "depId=" + depId +
+                ", depNo='" + depNo + '\'' +
+                ", depName='" + depName + '\'' +
                 ", location='" + location + '\'' +
                 ", leader='" + leader + '\'' +
-                ", dep_create_time='" + dep_create_time + '\'' +
+                ", depCreateTime='" + depCreateTime + '\'' +
                 '}';
     }
 }
