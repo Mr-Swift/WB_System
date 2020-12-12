@@ -196,7 +196,7 @@ public class UserDaoImpl implements IUserDao {
     }
 
     @Override
-    public Object selectByPage(int currentPage, int pageSize) {
+    public Object selectUsersByPage(int currentPage, int pageSize) {
         List<User> userList = null;
         try {
             userList = JdbcTemplate.executeQuery(getBasicQueryStr() + getOrderByAsc() + getLimitStr(), new UserObjectMapper(), (currentPage - 1) * pageSize, pageSize);

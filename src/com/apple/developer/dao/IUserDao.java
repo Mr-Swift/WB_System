@@ -12,7 +12,7 @@ public interface IUserDao<T> {
 
     public T countOfUsers();
 
-    public T selectByPage(int currentPage, int pageSize);
+    public T selectUsersByPage(int currentPage, int pageSize);
 
     public T selectByAccount(String loginAccount);
 
@@ -23,6 +23,7 @@ public interface IUserDao<T> {
     public T selectByStatusAndRoleId(int roleId, String userStatus);
 
     public T selectUsersByParams(String loginAccount, int roleId, String userStatus);
+
 
     public T insertUser(User userInsert);
 

@@ -51,7 +51,7 @@ class UserDaoImplTest {
 
     @Test
     void selectByPage() {
-        List<User> userList = (List<User>) iUserDao.selectByPage(1, 2);
+        List<User> userList = (List<User>) iUserDao.selectUsersByPage(1, 2);
         for (User user : userList) {
             System.out.println(user);
         }
