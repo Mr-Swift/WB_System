@@ -28,6 +28,14 @@ public class User implements Serializable {
     public User() {
     }
 
+    public User(int roleId) {
+        this.roleId = roleId;
+    }
+
+    public User(String userStatus) {
+        this.userStatus = userStatus;
+    }
+
     public User(String loginAccount, String loginPassword, String empNo, int roleId, String userStatus) {
         this.loginAccount = loginAccount;
         this.loginPassword = loginPassword;
@@ -36,13 +44,14 @@ public class User implements Serializable {
         this.userStatus = userStatus;
     }
 
-    public User(String loginAccount, String loginPassword, String userStatus, String userCreateTime, Employee employee, Role role) {
+    public User(String loginAccount, String loginPassword, Employee employee, Role role, String userStatus, String userCreateTime) {
         this.loginAccount = loginAccount;
         this.loginPassword = loginPassword;
-        this.userStatus = userStatus;
-        this.userCreateTime = userCreateTime;
         this.employee = employee;
         this.role = role;
+        this.userStatus = userStatus;
+        this.userCreateTime = userCreateTime;
+
     }
 
     /**
@@ -127,16 +136,14 @@ public class User implements Serializable {
      */
     @Override
     public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", loginAccount='" + loginAccount + '\'' +
-                ", loginPassword='" + loginPassword + '\'' +
-                ", empNo='" + empNo + '\'' +
-                ", roleId=" + roleId +
-                ", userStatus='" + userStatus + '\'' +
-                ", userCreateTime='" + userCreateTime + '\'' +
-                ", employee=" + employee +
-                ", role=" + role +
-                '}';
+        return "User:"
+                + "\tlogin_account--->" + this.loginAccount
+                + "\tlogin_password--->" + this.loginPassword
+                + "\temp_no--->" + this.employee.getempNo()
+                + "\temp_name--->" + this.employee.getempName()
+                + "\trole_id--->" + this.role.getroleId()
+                + "\trole_name--->" + this.role.getroleName()
+                + "\tuser_status--->" + this.userStatus
+                + "\tuser_create_time--->" + this.userCreateTime;
     }
 }

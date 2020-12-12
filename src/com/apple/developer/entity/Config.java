@@ -20,6 +20,8 @@ public class Config implements Serializable {
      * 存入时只需要conType、conKey、conPage
      * <p>
      * 取出时需要conId、conType、conKey、conPage、conCreateTime
+     * <p>
+     * 增、删、改写死，客户端无法进行操作。仅保留查。
      */
 
     public Config() {

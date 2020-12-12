@@ -17,6 +17,8 @@ public class Menu implements Serializable {
      * <p>
      * 存入写死，客户端不可以自行增加菜单（功能）
      * 取出时只需取出menuName、hrefUrl
+     * <p>
+     * 增删改写死，无法从客户端进行操作。仅保留查询。
      */
 
     public Menu() {
