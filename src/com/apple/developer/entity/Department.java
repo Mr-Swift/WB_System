@@ -8,15 +8,15 @@ public class Department implements Serializable {
     private String depNo;
     private String depName;
     private String location;
-    private String leader;
+    private String manager;
     private String depCreateTime;
 
     /**
      * 构造方法
      * <p>
-     * 存入时只需要depNo、depName、location、leader，depId自增长、depCreateTime now()函数自动获取
+     * 存入时只需要depNo、depName、location、manager，depId自增长、depCreateTime now()函数自动获取
      * <p>
-     * 取出时需要depId、depNo、depName、location、leader、depCreateTime
+     * 取出时需要depId、depNo、depName、location、manager、depCreateTime
      */
 
     public Department() {
@@ -27,18 +27,18 @@ public class Department implements Serializable {
         this.depName = depName;
     }
 
-    public Department(String depNo, String depName, String location, String leader) {
+    public Department(String depNo, String depName, String location, String manager) {
         this.depNo = depNo;
         this.depName = depName;
         this.location = location;
-        this.leader = leader;
+        this.manager = manager;
     }
 
-    public Department(String depNo, String depName, String location, String leader, String depCreateTime) {
+    public Department(String depNo, String depName, String location, String manager, String depCreateTime) {
         this.depNo = depNo;
         this.depName = depName;
         this.location = location;
-        this.leader = leader;
+        this.manager = manager;
         this.depCreateTime = depCreateTime;
     }
 
@@ -80,12 +80,12 @@ public class Department implements Serializable {
         this.location = location;
     }
 
-    public String getLeader() {
-        return leader;
+    public String getmanager() {
+        return manager;
     }
 
-    public void setLeader(String leader) {
-        this.leader = leader;
+    public void setmanager(String manager) {
+        this.manager = manager;
     }
 
     public String getdepCreateTime() {
@@ -103,11 +103,10 @@ public class Department implements Serializable {
     @Override
     public String toString() {
         return "Department{" +
-                "depId=" + depId +
-                ", depNo='" + depNo + '\'' +
+                "depNo='" + depNo + '\'' +
                 ", depName='" + depName + '\'' +
                 ", location='" + location + '\'' +
-                ", leader='" + leader + '\'' +
+                ", manager='" + manager + '\'' +
                 ", depCreateTime='" + depCreateTime + '\'' +
                 '}';
     }

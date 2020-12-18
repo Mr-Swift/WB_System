@@ -35,7 +35,7 @@ public class UserDaoImpl implements IUserDao {
         return stringBuffer.toString();
     }
 
-    public String getOrderByAsc() {
+    public String getOrderByAscStr() {
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("order ");
         stringBuffer.append("by ");
@@ -43,7 +43,7 @@ public class UserDaoImpl implements IUserDao {
         return stringBuffer.toString();
     }
 
-    public String getOrderByDesc() {
+    public String getOrderByDescStr() {
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("order ");
         stringBuffer.append("by ");
@@ -92,7 +92,6 @@ public class UserDaoImpl implements IUserDao {
 
     public String getCountOfUsersStr() {
         StringBuffer stringBuffer = new StringBuffer();
-//        select count(user_id) from tb_user
         stringBuffer.append("select ");
         stringBuffer.append("count(user_id) ");
         stringBuffer.append("from ");
@@ -199,18 +198,19 @@ public class UserDaoImpl implements IUserDao {
     public Object selectUsersByPage(int currentPage, int pageSize) {
         List<User> userList = null;
         try {
-            userList = JdbcTemplate.executeQuery(getBasicQueryStr() + getOrderByAsc() + getLimitStr(), new UserObjectMapper(), (currentPage - 1) * pageSize, pageSize);
+            userList = JdbcTemplate.executeQuery(getBasicQueryStr() + getOrderByAscStr() + getLimitStr(), new UserObjectMapper(), (currentPage - 1) * pageSize, pageSize);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return userList;
     }
 
+
     @Override
     public Object selectUsers() {
         List<User> userList = null;
         try {
-            userList = JdbcTemplate.executeQuery(getBasicQueryStr() + getOrderByAsc(), new UserObjectMapper(), null);
+            userList = JdbcTemplate.executeQuery(getBasicQueryStr() + getOrderByAscStr(), new UserObjectMapper(), null);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -222,7 +222,7 @@ public class UserDaoImpl implements IUserDao {
         List<User> userList = null;
         String selectByAccountStr = "where tb_user.login_account=? ";
         try {
-            userList = JdbcTemplate.executeQuery(getBasicQueryStr() + selectByAccountStr + getOrderByAsc(), new UserObjectMapper(), loginAccount);
+            userList = JdbcTemplate.executeQuery(getBasicQueryStr() + selectByAccountStr + getOrderByAscStr(), new UserObjectMapper(), loginAccount);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -234,7 +234,7 @@ public class UserDaoImpl implements IUserDao {
         List<User> userList = null;
         String selectByStatusStr = "where tb_user.user_status=? ";
         try {
-            userList = JdbcTemplate.executeQuery(getBasicQueryStr() + selectByStatusStr + getOrderByAsc(), new UserObjectMapper(), userStatus);
+            userList = JdbcTemplate.executeQuery(getBasicQueryStr() + selectByStatusStr + getOrderByAscStr(), new UserObjectMapper(), userStatus);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -246,7 +246,7 @@ public class UserDaoImpl implements IUserDao {
         List<User> userList = null;
         String selectByRoleIdStr = "where tb_role.role_id=? ";
         try {
-            userList = JdbcTemplate.executeQuery(getBasicQueryStr() + selectByRoleIdStr + getOrderByAsc(), new UserObjectMapper(), roleId);
+            userList = JdbcTemplate.executeQuery(getBasicQueryStr() + selectByRoleIdStr + getOrderByAscStr(), new UserObjectMapper(), roleId);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -258,7 +258,7 @@ public class UserDaoImpl implements IUserDao {
         List<User> userList = null;
         String selectByStatusAndRoleIdStr = "where tb_role.role_id=? and tb_user.user_status=? ";
         try {
-            userList = JdbcTemplate.executeQuery(getBasicQueryStr() + selectByStatusAndRoleIdStr + getOrderByAsc(), new UserObjectMapper(), roleId, userStatus);
+            userList = JdbcTemplate.executeQuery(getBasicQueryStr() + selectByStatusAndRoleIdStr + getOrderByAscStr(), new UserObjectMapper(), roleId, userStatus);
         } catch (SQLException e) {
             e.printStackTrace();
         }

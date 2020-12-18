@@ -1,17 +1,23 @@
 package com.apple.developer.dao;
 
+import com.apple.developer.entity.Department;
+
 @SuppressWarnings("all")
 public interface IDepartmentDao<T> {
     public T selectDepartments();
 
-    public T selectByNo();
+    public T countOfDepartments();
 
-    public T selectByName();
+    public T selectDepartmentsByPage(int currentPage, int pageSize);
 
-    public T insertDepartment();
+    public T selectByNo(String depNo);
 
-    public T updateByNo();
+    public T selectByName(String depName);
 
-    public T deleteByNo();
+    public T insertDepartment(Department department);
+
+    public T updateByNo(Department department);
+
+    public T deleteByNo(String depNo);
 
 }

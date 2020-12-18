@@ -6,7 +6,7 @@ import java.io.Serializable;
 public class Permission implements Serializable {
     private int perId;
     private int roleId;
-    private int menu_id;
+    private int menuId;
     private String perCreateTime;
 
     private Role role;
@@ -16,7 +16,7 @@ public class Permission implements Serializable {
      * 构造方法
      * <p>
      * 存入时，将得到的角色名称、菜单名称查找到对应的角色ID、菜单ID存进去
-     * 存入时只需要roleId、menu_id，perId自增长、perCreateTime用now()函数自动生成
+     * 存入时只需要roleId、menuId，perId自增长、perCreateTime用now()函数自动生成
      * <p>
      * 取出时，将数据库里的角色ID、菜单ID多表联查，查到角色名称、菜单名称取出来
      * 取出时需要perCreateTime,role、menu
@@ -24,9 +24,9 @@ public class Permission implements Serializable {
     public Permission() {
     }
 
-    public Permission(int roleId, int menu_id) {
+    public Permission(int roleId, int menuId) {
         this.roleId = roleId;
-        this.menu_id = menu_id;
+        this.menuId = menuId;
     }
 
     public Permission(String perCreateTime, Role role, Menu menu) {
@@ -58,12 +58,12 @@ public class Permission implements Serializable {
         this.roleId = roleId;
     }
 
-    public int getMenu_id() {
-        return menu_id;
+    public int getmenuId() {
+        return menuId;
     }
 
-    public void setMenu_id(int menu_id) {
-        this.menu_id = menu_id;
+    public void setmenuId(int menuId) {
+        this.menuId = menuId;
     }
 
     public String getperCreateTime() {
@@ -95,13 +95,11 @@ public class Permission implements Serializable {
      */
     @Override
     public String toString() {
-        return "Permission{" +
-                "perId=" + perId +
-                ", roleId=" + roleId +
-                ", menu_id=" + menu_id +
-                ", perCreateTime='" + perCreateTime + '\'' +
-                ", role=" + role +
-                ", menu=" + menu +
-                '}';
+        return "Permission:"
+                + "\troleId-->" + this.role.getroleId()
+                + "\troleName-->" + this.role.getroleName()
+                + "\tmenuId-->" + this.menu.getmenuId()
+                + "\tmenuName-->" + this.menu.getmenuName()
+                + "\tperCreateTime-->" + this.getperCreateTime();
     }
 }

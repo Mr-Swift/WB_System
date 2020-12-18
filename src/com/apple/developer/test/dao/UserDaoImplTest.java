@@ -70,7 +70,6 @@ class UserDaoImplTest {
         List<User> userList = (List<User>) iUserDao.selectByAccount("admin");
         for (User user : userList) {
             System.out.println(user);
-
         }
     }
 
@@ -107,7 +106,7 @@ class UserDaoImplTest {
 
     @Test
     void updateByAccount() {
-        User userUpdate = new User("jack", "jack123456", "E0002", 1, "正常");
+        User userUpdate = new User("jack", "jack1234567", "E0002", 1, "正常");
         int result = (int) iUserDao.updateByAccount(userUpdate);
         System.out.println(result);
     }

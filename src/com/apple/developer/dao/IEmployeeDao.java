@@ -1,19 +1,28 @@
 package com.apple.developer.dao;
 
+import com.apple.developer.entity.Employee;
+
 @SuppressWarnings("all")
 public interface IEmployeeDao<T> {
+
+    public T selectEmployeeDepName();
+
     public T selectEmployees();
 
-    public T selectByEmpNo();
+    public T countOfEmployees();
 
-    public T selectByEmpName();
+    public T selectEmployeesByPage(int currentPage, int pageSize);
 
-    public T selectByDepNo();
+    public T selectByEmpNo(String empNo);
 
-    public T insertEmployee();
+    public T selectByEmpName(String empName);
 
-    public T updateByEmpNo();
+    public T selectByDepNo(String depNo);
 
-    public T deleteByEmpNo();
+    public T insertEmployee(Employee employee);
+
+    public T updateByEmpNo(Employee employee);
+
+    public T deleteByEmpNo(String empNo);
 
 }

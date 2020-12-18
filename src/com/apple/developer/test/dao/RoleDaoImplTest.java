@@ -83,6 +83,30 @@ class RoleDaoImplTest {
 
     @Test
     void selectByName() {
+        List<Role> roleList = (List<Role>) iRoleDao.selectByName("普通用户");
+        for (Role role : roleList
+        ) {
+            System.out.println(role);
+        }
+    }
 
+    @Test
+    void insertRole() {
+        Role role = new Role("总经理04");
+        int result = (int) iRoleDao.insertRole(role);
+        System.out.println(result);
+    }
+
+    @Test
+    void updateById() {
+        Role role = new Role(7, "人事03");
+        int result = (int) iRoleDao.updateById(role);
+        System.out.println(result);
+    }
+
+    @Test
+    void deleteById() {
+        int result = (int) iRoleDao.deleteById(11);
+        System.out.println(result);
     }
 }

@@ -178,20 +178,33 @@ public class Employee implements Serializable {
      */
     @Override
     public String toString() {
-        return "Employee{" +
-                "empId=" + empId +
-                ", empNo='" + empNo + '\'' +
-                ", empName='" + empName + '\'' +
-                ", depNo='" + depNo + '\'' +
-                ", sex='" + sex + '\'' +
-                ", age=" + age +
-                ", education='" + education + '\'' +
-                ", email='" + email + '\'' +
-                ", telphone='" + telphone + '\'' +
-                ", address='" + address + '\'' +
-                ", entryTime='" + entryTime + '\'' +
-                ", empCreateTime='" + empCreateTime + '\'' +
-                ", department=" + department +
-                '}';
+        /**
+         *     private int empId;
+         *     private String empNo;
+         *     private String empName;
+         *     private String depNo;
+         *     private String sex;
+         *     private int age;
+         *     private String education;
+         *     private String email;
+         *     private String telphone;
+         *     private String address;
+         *     private String entryTime;
+         *     private String empCreateTime;
+         *
+         *     private Department department;
+         */
+        return "Employee:" + "\tempNo-->" + this.empNo
+                + "\tempName-->" + this.empName
+                + "\tdepNo-->" + this.department.getdepNo()
+                + "\tdepName-->" + this.department.getdepName()
+                + "\tsex-->" + this.sex
+                + "\tage-->" + this.age
+                + "\teducation-->" + this.education
+                + "\temail-->" + this.email
+                + "\ttelphone-->" + this.telphone
+                + "\taddress-->" + this.address
+                + "\tentryTime-->" + this.entryTime
+                + "\tempCreateTime-->" + this.empCreateTime;
     }
 }

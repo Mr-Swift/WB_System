@@ -21,7 +21,7 @@ public class RoleDaoImpl implements IRoleDao {
         return stringBuffer.toString();
     }
 
-    public String getOrderByAsc() {
+    public String getOrderByAscStr() {
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("order ");
         stringBuffer.append("by ");
@@ -29,7 +29,7 @@ public class RoleDaoImpl implements IRoleDao {
         return stringBuffer.toString();
     }
 
-    public String getOrderByDesc() {
+    public String getOrderByDescStr() {
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("order ");
         stringBuffer.append("by ");
@@ -60,7 +60,7 @@ public class RoleDaoImpl implements IRoleDao {
         stringBuffer.append("update ");
         stringBuffer.append("tb_role ");
         stringBuffer.append("set ");
-        stringBuffer.append("role_name=？ ");
+        stringBuffer.append("role_name=? ");
         stringBuffer.append("where ");
         stringBuffer.append("role_id=？ ");
         return stringBuffer.toString();
@@ -96,12 +96,11 @@ public class RoleDaoImpl implements IRoleDao {
         }
     }
 
-
     @Override
     public Object selectRoles() {
         List<Role> roleList = null;
         try {
-            roleList = JdbcTemplate.executeQuery(getBasicQueryStr() + getOrderByAsc(), new RoleObjectMapper(), null);
+            roleList = JdbcTemplate.executeQuery(getBasicQueryStr() + getOrderByAscStr(), new RoleObjectMapper(), null);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -129,7 +128,7 @@ public class RoleDaoImpl implements IRoleDao {
     public Object selectByPage(int currentPage, int pageSize) {
         List<Role> roleList = null;
         try {
-            roleList = JdbcTemplate.executeQuery(getBasicQueryStr() + getOrderByAsc() + getLimitStr(), new RoleObjectMapper(), (currentPage - 1) * pageSize, pageSize);
+            roleList = JdbcTemplate.executeQuery(getBasicQueryStr() + getOrderByAscStr() + getLimitStr(), new RoleObjectMapper(), (currentPage - 1) * pageSize, pageSize);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -141,7 +140,7 @@ public class RoleDaoImpl implements IRoleDao {
         List<Role> roleList = null;
         String selectByIdStr = "where role_id=? ";
         try {
-            roleList = JdbcTemplate.executeQuery(getBasicQueryStr() + selectByIdStr + getOrderByAsc(), new RoleObjectMapper(), roleId);
+            roleList = JdbcTemplate.executeQuery(getBasicQueryStr() + selectByIdStr + getOrderByAscStr(), new RoleObjectMapper(), roleId);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -153,7 +152,7 @@ public class RoleDaoImpl implements IRoleDao {
         List<Role> roleList = null;
         String selectByNameStr = "where role_name=? ";
         try {
-            roleList = JdbcTemplate.executeQuery(getBasicQueryStr() + selectByNameStr + getOrderByAsc(), new RoleObjectMapper(), null);
+            roleList = JdbcTemplate.executeQuery(getBasicQueryStr() + selectByNameStr + getOrderByAscStr(), new RoleObjectMapper(), roleName);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -186,7 +185,7 @@ public class RoleDaoImpl implements IRoleDao {
     public Object updateById(Role role) {
         int result = -1;
         try {
-            result = JdbcTemplate.executeUpdate(getUpdateStr(), role.getroleName());
+            result = JdbcTemplate.executeUpdate("update tb_role set role_name=? where role_id=? ", role.getroleName(), role.getroleId());
         } catch (SQLException e) {
             e.printStackTrace();
         }
